@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,25 +24,8 @@ namespace daterprojekt
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=C:\Users\user\source\repos\daterprojekt/benutzer_table.sql; Initial Catalog=LoginDB; Integreated Security=True;");
-            try
-            {
-                if (sqlCon.State == System.Data.ConnectionState.Closed)
-                    sqlCon.Open();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlCon.Close();
-            }
-
-
             Login LogInWindow = new Login();
             MainWindow MainWindow = new MainWindow();
             MainWindow.Show();
